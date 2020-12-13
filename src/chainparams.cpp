@@ -48,12 +48,12 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xe4;
-        pchMessageStart[1] = 0x83;
-        pchMessageStart[2] = 0xe6;
-        pchMessageStart[3] = 0x32;
-        nDefaultPort = 7391;
-        nRPCPort = 3791;
+        pchMessageStart[0] = 0xa4;
+        pchMessageStart[1] = 0x82;
+        pchMessageStart[2] = 0xa5;
+        pchMessageStart[3] = 0x23;
+        nDefaultPort = 89010;
+        nRPCPort = 6105;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 20);
 
         // Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -64,7 +64,7 @@ public:
         //    CTxIn(COutPoint(0000000000, 4294967295), coinbase 00012a24323020466562203230313420426974636f696e2041544d7320636f6d6520746f20555341)
         //    CTxOut(empty)
         //  vMerkleTree: 12630d16a9
-        const char* pszTimestamp = "Happy 25th birthday Neva!!!";
+        const char* pszTimestamp = "Devilking6105 says to enjoy your day on December 13th, 2020";
         std::vector<CTxIn> vin;
         vin.resize(1);
         vin[0].scriptSig = CScript() << 0 << CBigNum(42) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -84,12 +84,12 @@ public:
         assert(hashGenesisBlock == uint256("0x0000067865dd821b9f8b2dcdfb367c9d1344d3335fa6fc6d7940b026b88169a6"));
         assert(genesis.hashMerkleRoot == uint256("0x5783b7fc8f9fca30e77cf3333549ffed2f229a23fbbad4ab79cd2d3c15841af5"));
 
-        vSeeds.push_back(CDNSSeedData("nevacoin.net", "n1.nevacoin.net"));
-        vSeeds.push_back(CDNSSeedData("nevacoin.net", "n2.nevacoin.net"));
-        vSeeds.push_back(CDNSSeedData("nevacoin.net", "n3.nevacoin.net"));
-        vSeeds.push_back(CDNSSeedData("nevacoin.net", "n4.nevacoin.net"));
+      // vSeeds.push_back(CDNSSeedData("nevacoin.net", "n1.nevacoin.net"));
+      // vSeeds.push_back(CDNSSeedData("nevacoin.net", "n2.nevacoin.net"));
+      // vSeeds.push_back(CDNSSeedData("nevacoin.net", "n3.nevacoin.net"));
+      //  vSeeds.push_back(CDNSSeedData("nevacoin.net", "n4.nevacoin.net"));
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,53);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,177);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x88)(0xB2)(0x1E).convert_to_container<std::vector<unsigned char> >();
@@ -97,7 +97,7 @@ public:
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
-        nLastPOWBlock = 5256000;
+        nLastPOWBlock = 2;
     }
 
     virtual const CBlock& GenesisBlock() const { return genesis; }
@@ -123,13 +123,13 @@ public:
         // The message start string is designed to be unlikely to occur in normal data.
         // The characters are rarely used upper ASCII, not valid as UTF-8, and produce
         // a large 4-byte int at any alignment.
-        pchMessageStart[0] = 0xac;
-        pchMessageStart[1] = 0x43;
-        pchMessageStart[2] = 0xfe;
-        pchMessageStart[3] = 0x8c;
+        pchMessageStart[0] = 0xca;
+        pchMessageStart[1] = 0x34;
+        pchMessageStart[2] = 0xef;
+        pchMessageStart[3] = 0xc8;
         bnProofOfWorkLimit = CBigNum(~uint256(0) >> 8);
-        nDefaultPort = 17391;
-        nRPCPort = 13791;
+        nDefaultPort = 189010;
+        nRPCPort = 16105;
         strDataDir = "testnet";
 
         // Modify the testnet genesis block so the timestamp is valid for a later start.
@@ -141,8 +141,8 @@ public:
         assert(hashGenesisBlock == uint256("0x005a03c21a8fd3cec753cd5d8bcb0b8b18071ee65f8c77af13e671c1bce771f4"));
 
         vFixedSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("nevacoin.net", "test1.nevacoin.net"));
-        vSeeds.push_back(CDNSSeedData("nevacoin.net", "test2.nevacoin.net"));
+     //   vSeeds.push_back(CDNSSeedData("nevacoin.net", "test1.nevacoin.net"));
+     //   vSeeds.push_back(CDNSSeedData("nevacoin.net", "test2.nevacoin.net"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
