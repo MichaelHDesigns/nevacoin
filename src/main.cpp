@@ -993,9 +993,9 @@ static CBigNum GetProofOfStakeLimit(int nHeight)
 // miner's coin base reward
 int64_t GetProofOfWorkReward(int64_t nFees, int nHeight)
 {
-    int64_t nSubsidy = 5 * COIN;
+    int64_t nSubsidy = 3000000000 * COIN;
 
-    nSubsidy >>= (pindexBest->nHeight / 2628000);
+    nSubsidy >>= (pindexBest->nHeight / 1);
 
     LogPrint("creation", "GetProofOfWorkReward() : create=%s nSubsidy=%d nHeight=%d\n", FormatMoney(nSubsidy), nSubsidy, nHeight);
 
@@ -1005,9 +1005,9 @@ int64_t GetProofOfWorkReward(int64_t nFees, int nHeight)
 // miner's coin stake reward based on coin age spent (coin-days)
 int64_t GetProofOfStakeReward(int64_t nCoinAge, int64_t nFees, int nHeight)
 {
-    int64_t nSubsidy = 5 * COIN;
+    int64_t nSubsidy = 1 * COIN;
 
-    nSubsidy >>= (pindexBest->nHeight / 2628000);
+    nSubsidy >>= (pindexBest->nHeight / 2);
 
 
     LogPrint("creation", "GetProofOfStakeReward(): create=%s nCoinAge=%d nHeight=%d\n", FormatMoney(nSubsidy), nCoinAge, nHeight);
